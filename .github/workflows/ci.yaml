@@ -44,5 +44,5 @@ jobs:
           platforms: linux/arm64,linux/amd64
           push: true
           tags: |
-            ghcr.io/Kings-Distributed-Systems/python-rds-ref:${{  github.ref_name }}
-            ghcr.io/Kings-Distributed-Systems/python-rds-ref:latest
+            ghcr.io/kings-distributed-systems/python-rds-ref:${{  github.ref_name }}
+            ghcr.io/kings-distributed-systems/python-rds-ref:latest
