@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "python-rds-ref"
+version = "0.1.0"
+description = ""
+authors = ["Hamada Gasmallah <hamada@distributive.network>"]
+readme = "README.md"
+packages = [{include = "python_rds_ref"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+dataserver = "python_rds_ref.dataserver:cli"
