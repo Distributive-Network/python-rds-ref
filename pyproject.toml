@@ -10,6 +10,8 @@ packages = [{include = "python_rds_ref"}]
 python = "^3.10"
 
 
+[tool.poetry.group.dev.dependencies]
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
