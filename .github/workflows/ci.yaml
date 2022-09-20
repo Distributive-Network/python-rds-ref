@@ -6,11 +6,11 @@ on:
       - v*
 
 jobs:
-  test:
+  pypi-build:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v2
       - name: Set up python
         uses: actions/setup-python@v4
         with:
@@ -24,3 +24,25 @@ jobs:
           PYPI_USERNAME: ${{ secrets.PYPI_API_USER }}
           PYPI_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
         run: poetry publish --build --username $PYPI_USERNAME --password $PYPI_PASSWORD
+
+  docker-build:
+    runs-on: ubuntu-latest
+    needs: pypi-build
+    steps:
+      - uses: actions/checkout@v2
+      - uses: docker/setup-qemu-action@v1
+      - uses: docker/setup-buildx-action@v1
+      - uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v2
+        with:
+          context: ./docker/
+          file: ./docker/Dockerfile
+          platforms: linux/arm64,linux/amd64
+          push: true
+          tags: |
+            ghcr.io/Kings-Distributed-Systems/python-rds-ref:${{  github.ref_name }}
+            ghcr.io/Kings-Distributed-Systems/python-rds-ref:latest
