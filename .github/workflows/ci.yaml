@@ -23,7 +23,7 @@ jobs:
         env:
           PYPI_USERNAME: ${{ secrets.PYPI_API_USER }}
           PYPI_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
-        run: poetry publish --build --username $PYPI_USERNAME --password $PYPI_PASSWORD
+        run: poetry publish --build --username $PYPI_USERNAME --password $PYPI_PASSWORD --skip-existing
 
   docker-build:
     runs-on: ubuntu-latest
