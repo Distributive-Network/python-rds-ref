@@ -1,6 +1,5 @@
 import sys
 import http.server
-from http.server import HTTPServer, BaseHTTPRequestHandler
 import socketserver
 
 def start_server(PORT=8080):
