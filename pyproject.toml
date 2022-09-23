@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "python-rds-ref"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
 authors = ["Hamada Gasmallah <hamada@distributive.network>"]
 readme = "README.md"
 packages = [{include = "python_rds_ref"}]
 
 [tool.poetry.dependencies]
-python = "^3.10"
+python = "^3.8"
 
 
 [tool.poetry.group.dev.dependencies]
