@@ -1,0 +1,10 @@
+site_name: 'Python RDS Ref'
+site_description: 'Main documentation for the Python RDS Ref implementation'
+repo_url: https://github.com/Kings-Distributed-Systems/python-rds-ref
+edit_uri: edit/main/techdocs/docs
+
+plugins:
+  - techdocs-core
+
+nav:
+  - Overview: index.md

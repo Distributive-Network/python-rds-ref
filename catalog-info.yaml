@@ -1,0 +1,14 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: python-rds-ref
+  description: |
+    Python RDS Ref implementation is a very naive python dataserver that serves files with the appropriate MIME types.
+  annotations:
+    github.com/project-slug: Kings-Distributed-Systems/python-rds-ref
+    backstage.io/techdocs-ref: dir:./techdocs
+spec:
+  type: library
+  owner: CNCF
+  lifecycle: experimental
+
