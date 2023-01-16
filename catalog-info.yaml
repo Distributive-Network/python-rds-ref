@@ -9,6 +9,6 @@ metadata:
     backstage.io/techdocs-ref: dir:./techdocs
 spec:
   type: library
-  owner: CNCF
+  owner: hamada
   lifecycle: experimental
 
