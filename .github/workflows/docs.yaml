@@ -40,7 +40,7 @@ jobs:
         run: python -m pip install mkdocs-techdocs-core==1.*
 
       - name: Generate docs site
-        run: techdocs-cli generate --no-docker --verbose
+        run: techdocs-cli generate --no-docker --verbose --source-dir ./techdocs/
 
       - name: Publish docs site
         run: techdocs-cli publish --publisher-type awsS3 --storage-name $TECHDOCS_S3_BUCKET_NAME --entity $ENTITY_NAMESPACE/$ENTITY_KIND/$ENTITY_NAME
